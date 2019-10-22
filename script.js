@@ -1,10 +1,11 @@
-let subir = 0
 function altura(){
-    subir = alert(window.screen.availHeight)
-    console.log(`${subir}`)
+    var retorno = document.getElementById("gancho")
+    retorno.innerHTML += `A altura da tela é ${window.screen.availHeight}px`
 }
 function vai(){
-    for(i=0;i<=subir;i++){
+    for(i=0;i<=window.screen.availHeight;i++){
         window.document.getElementById("gancho").innerHTML += `\u{2764} `
     }
 }
+
+
