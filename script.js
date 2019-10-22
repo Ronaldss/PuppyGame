@@ -4,7 +4,7 @@ function altura(){
 }
 function vai(){
     for(i=0;i<=2*window.screen.availHeight;i++){
-        var img = window.document.getElementById("gancho").innerHTML += `\u{1f43e} `
+        var img = window.document.getElementById("gancho").innerHTML += `\u{1f680} `
         img.Height = "50px"
     }
 }
