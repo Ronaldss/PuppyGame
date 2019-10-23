@@ -4,13 +4,17 @@ function gerarBolinha(){
     document.getElementById("bolinha").style.left="150px"
 }
 var posicaox = 0
+var posicaoy = 150
 function anda(){
-    posicaox+=5
-    document.getElementById("bolinha").style.top=posicaox+'px'
-    document.getElementById("bolinha").style.left=`150px`
-    setTimeout(anda(),10)
+    posicaox+=1
+    document.getElementById("bolinha").style.top=`${posicaoy}px`
+    document.getElementById("bolinha").style.left=`${posicaox}px`
+    setTimeout('anda()',50)
 }
 anda()
+function recua(){
+    posicaox-=10
+}
 
 // ------------------------------------------------------------------------
 function altura(){
