@@ -12,3 +12,10 @@ body{
     border-radius:50%; 
     position:absolute;
 }   
+#bolinha2{
+    background-color:#f802cf; 
+    width:50px; 
+    height:50px; 
+    border-radius:50%; 
+    position:absolute;
+} 

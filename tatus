@@ -1,0 +1,59 @@
+[33mcommit 5d76be5cea51eb615e71102c29c9ed0cf3ac6fb9[m[33m ([m[1;36mHEAD -> [m[1;32mMovimentacao[m[33m, [m[1;31morigin/Movimentacao[m[33m)[m
+Author: RonaldsS <ronald_ss@outlook.com>
+Date:   Thu Oct 24 16:58:35 2019 -0300
+
+    movimentos
+
+[33mcommit 0d26d4e80d0de77aec1bf465887b00189a93149f[m
+Author: RonaldsS <ronald_ss@outlook.com>
+Date:   Thu Oct 24 13:28:53 2019 -0300
+
+    Criando movimentação da primeira div
+
+[33mcommit 92d17e1ae6ae978ee3769008659a449ed4dad7d8[m[33m ([m[1;31morigin/Tela[m[33m, [m[1;32mTela[m[33m)[m
+Author: RonaldsS <ronald_ss@outlook.com>
+Date:   Wed Oct 23 17:01:27 2019 -0300
+
+    alocando imagem na div
+
+[33mcommit 0ca320c713c44fdafa05b51c1801d20dcbb5bba0[m
+Author: RonaldsS <ronald_ss@outlook.com>
+Date:   Wed Oct 23 16:46:32 2019 -0300
+
+    fuction recua()
+
+[33mcommit 12849f46c27e4901bbe663a6b01de44e25533895[m
+Author: RonaldsS <ronald_ss@outlook.com>
+Date:   Wed Oct 23 16:06:22 2019 -0300
+
+    fuction andar - alteracao nas tres tecnologias
+
+[33mcommit 54a4ae4f2b919f41fa452d9cc658083267ed6652[m
+Author: RonaldsS <ronald_ss@outlook.com>
+Date:   Tue Oct 22 11:31:03 2019 -0300
+
+    pequenas alterações
+
+[33mcommit 2ecd726778b94ea92a11499c014761971540aabd[m
+Author: RonaldsS <ronald_ss@outlook.com>
+Date:   Tue Oct 22 11:25:14 2019 -0300
+
+    pequenas alterações
+
+[33mcommit 6d2c088600efd56cd3ae6fa2a8e7f300e9f329db[m
+Author: RonaldsS <ronald_ss@outlook.com>
+Date:   Tue Oct 22 11:15:24 2019 -0300
+
+    Capturando altura da tela
+
+[33mcommit 7e8636cf1969292afb8b42e306b9e6e0fe2a5db4[m
+Author: RonaldsS <ronald_ss@outlook.com>
+Date:   Tue Oct 22 11:00:13 2019 -0300
+
+    Capiturando altura da tela
+
+[33mcommit 182462b675abc424f4a99d895cc36be5b2219f0e[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: RonaldsS <ronald_ss@outlook.com>
+Date:   Mon Oct 21 20:35:27 2019 -0300
+
+    Begin mensagem na bolha
