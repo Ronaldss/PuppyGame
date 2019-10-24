@@ -4,9 +4,10 @@ function gerarBolinha(){
     document.getElementById("bolinha").style.left="150px"
 }
 var posicaox = 0
-var posicaoy = 150
+var posicaoy = 0
 function anda(){
     posicaox+=1
+    posicaoy+=1
     document.getElementById("bolinha").style.top=`${posicaoy}px`
     document.getElementById("bolinha").style.left=`${posicaox}px`
     setTimeout('anda()',50)
