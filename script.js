@@ -5,14 +5,26 @@ function gerarBolinha(){
 }
 var posicaox = 0
 var posicaoy = 0
-function anda(){
-    posicaox+=1
-    posicaoy+=1
+var direcaox = 5
+var direcaoy = 5
+function anda(){ // Ronald
+    //posicaox+=1
+    //posicaoy+=1
+
+    posicaox+=direcaox;
+    if(posicaox>(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)-50)direcaox=direcaox*-1;
+    if(posicaox<0)direcaox=direcaox*-1;
+
+    posicaoy+=direcaoy;
+    if(posicaoy>(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)-50)direcaoy=direcaoy*-1;
+    if(posicaoy<0)direcaoy=direcaoy*-1;
+
     document.getElementById("bolinha").style.top=`${posicaoy}px`
     document.getElementById("bolinha").style.left=`${posicaox}px`
     setTimeout('anda()',50)
 }
 anda()
+
 function recua(){
     posicaox-=10
 }
