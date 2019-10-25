@@ -13,6 +13,17 @@ function gerarBolinha(){
     document.getElementById("livre").style.top=`${h/2}px`
     document.getElementById("livre").style.left=`${w/2}px`
 }
+var posicAtual = h/2
+var op=[0,1,2,3,4,5,6,7,8,9,10]
+var passosLivres = 0
+var nR = 0
+function livre(){
+    nR = Math.floor(Math.random()*65536) // Gerar um número até 65536ss
+    passosLivres += Math.floor(Math.random()*10+1) // Gera números aleatórios entre 1 e 10.
+    document.getElementById("livre").style.top = `${passosLivres}px`
+    document.getElementById("livre").style.left = `${passosLivres}px`
+    setTimeout('livre()',100)
+}
 var posicaox = 0
 var posicaoy = 0
 var direcaox = 1
@@ -43,9 +54,6 @@ function anda2(){ // Ronald
     document.getElementById("bolinha2").style.left=`${pposicaoy}px`
     setTimeout('anda2()',30)
 }
-//anda() 
-//anda2()
-
 function recua(){
     posicaox-=10
 }
