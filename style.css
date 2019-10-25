@@ -12,3 +12,17 @@ body{
     border-radius:50%; 
     position:absolute;
 }   
+#bolinha2{
+    background-color:#f802cf; 
+    width:50px; 
+    height:50px; 
+    border-radius:50%; 
+    position:absolute;
+} 
+#livre{
+    background-color:#02e4f8; 
+    width:10px; 
+    height:10px; 
+    border-radius:50%; 
+    position:absolute;
+} 
