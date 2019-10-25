@@ -10,8 +10,12 @@ function gerarBolinha(){
     document.getElementById("bolinha2").style.left="400px" 
 
     // Livre
-    document.getElementById("livre").style.top=`${h/2}px`
-    document.getElementById("livre").style.left=`${w/2}px`
+    document.getElementById("livre").style.top=`${h/3}px`
+    document.getElementById("livre").style.left=`${w/3}px`
+
+    // Livre2 - test
+    document.getElementsByClassName("movido")[0].style.top=`${h/2}px`
+    document.getElementsByClassName("movido")[0].style.left=`${w/2}px`
 }
 var posicAtual = h/2
 var op=[0,1,2,3,4,5,6,7,8,9,10]
@@ -24,9 +28,21 @@ function livre(){
     document.getElementById("livre").style.left = `${passosLivres}px`
     setTimeout('livre()',100)
 }
+var n1 = h/2
+var n2 = w/2
 function livre2(){
-    document.getElementsByClassName("movido")[0].style.translate = `10px`
+    function aleatorio(min, max) {
+        return Math.floor(Math.random() * (max - min) + min)
+    }
+    console.log(aleatorio(-1,1))
+    n1+=aleatorio(-1,2)
+    n2-=aleatorio(-1,2)
+    document.getElementsByClassName("movido")[0].style.transform = `translate(${n1}px, ${n2}px)`
+    if(n1==1){n1+=10}
     document.getElementsByClassName("movido")[0].style.backgroundColor = "pink"
+    document.getElementsByClassName("movido")[0].style.borderRadius = "50%"
+    document.getElementsByClassName("movido")[0].style.width = "50px"
+    setTimeout('livre2()', 1)
 }
 
 var posicaox = 0
@@ -74,6 +90,5 @@ function vai(){
         img.Height = "50px"
     }
 }
-
 
 
