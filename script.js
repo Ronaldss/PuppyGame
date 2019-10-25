@@ -24,6 +24,11 @@ function livre(){
     document.getElementById("livre").style.left = `${passosLivres}px`
     setTimeout('livre()',100)
 }
+function livre2(){
+    document.getElementsByClassName("movido")[0].style.translate = `10px`
+    document.getElementsByClassName("movido")[0].style.backgroundColor = "pink"
+}
+
 var posicaox = 0
 var posicaoy = 0
 var direcaox = 1
