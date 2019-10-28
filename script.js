@@ -38,7 +38,7 @@ function livre2(){
     n1+=aleatorio(-1,2)
     n2-=aleatorio(-1,2)
     document.getElementsByClassName("movido")[0].style.transform = `translate(${n1}px, ${n2}px)`
-    if(n1==1){n1+=10}
+    //if(n1==1){n1+=10}
     document.getElementsByClassName("movido")[0].style.backgroundColor = "pink"
     document.getElementsByClassName("movido")[0].style.borderRadius = "50%"
     document.getElementsByClassName("movido")[0].style.width = "50px"
