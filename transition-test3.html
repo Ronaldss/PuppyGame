@@ -6,11 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Transition Teste 3</title>
 <style>
-  p{padding-left:60px;}
+  body{
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+  }
   #foo{
   border-radius:50px;
-  width:50px;
-  height:50px;
+  border: solid 2px fuchsia;
+  width:20px;
+  height:20px;
   background:rgb(41, 0, 95);
   position:absolute;
   top:0;
@@ -23,8 +27,11 @@
 }
 #rd{
   border-radius:50px;
+  border: solid 2px orangered;
   width:50px;
   height:50px;
+  line-height: 50px;
+  text-align: center;
   background:rgb(251, 255, 0);
   position:absolute;
   top:30;
@@ -35,32 +42,34 @@
   -o-transition: transform 1s;  
   transition: transform 1s;  
 }
+.bt{
+  margin-right: 10px;
+}
 </style>
 </head>
 <body>
-  <input type="button" value="vai" onclick="master()">
-  <p></p>
-  <div id="rd"></div>
+  <input type="button" value="vai" class="bt" onclick="master()">
+  <div id="rd">Rd</div>
   <div id="foo"></div>
 
   <script>
-    var n1 = window.innerHeight/2
-    var n2 = window.innerWidth/2
+    var n1 = 10
+    var n2 = 10
     function master(){
       function aleatorio(min, max) {
         return Math.floor(Math.random() * (max - min) + min)
       }
-      n1+=aleatorio(-60,60)
-      n2-=aleatorio(-60,60)
+      n1=aleatorio(0,window.innerHeight-80)
+      n2=aleatorio(0,window.innerWidth-80)
+      console.log(`Y: ${n1}`)
+      console.log(`X: ${n2}`)
       
       function vai(){
-        console.log(`N1: ${n1}`)
-        console.log(`N2: ${n2}`)
         document.querySelector("div#rd").style.transform = `translateY(${n1}px)`
         document.querySelector("div#rd").style.transform += `translateX(${n2}px)`
       }
       vai()
-      setTimeout('master()',5)
+      setTimeout('master()',1000)
     }
     var f = document.getElementById('foo');
       document.addEventListener('click', function(ev){
