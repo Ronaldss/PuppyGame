@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Transition Teste 3</title>
+<style>
+  p{padding-left:60px;}
+  #foo{
+  border-radius:50px;
+  width:50px;
+  height:50px;
+  background:rgb(41, 0, 95);
+  position:absolute;
+  top:0;
+  left:0;
+  -moz-transition: transform 1s; 
+  -webkit-transition: transform 1s;  
+  -ms-transition: transform 1s;  
+  -o-transition: transform 1s;  
+  transition: transform 1s cubic-bezier(0.68,-0.55,0.265,1.55); 
+}
+#rd{
+  border-radius:50px;
+  width:50px;
+  height:50px;
+  background:rgb(251, 255, 0);
+  position:absolute;
+  top:30;
+  left:30;
+  -moz-transition: transform 1s; 
+  -webkit-transition: transform 1s;  
+  -ms-transition: transform 1s;  
+  -o-transition: transform 1s;  
+  transition: transform 1s;  
+}
+</style>
+</head>
+<body>
+  <input type="button" value="vai" onclick="master()">
+  <p></p>
+  <div id="rd"></div>
+  <div id="foo"></div>
+
+  <script>
+    var n1 = window.innerHeight/2
+    var n2 = window.innerWidth/2
+    function master(){
+      function aleatorio(min, max) {
+        return Math.floor(Math.random() * (max - min) + min)
+      }
+      n1+=aleatorio(-60,60)
+      n2-=aleatorio(-60,60)
+      
+      function vai(){
+        console.log(`N1: ${n1}`)
+        console.log(`N2: ${n2}`)
+        document.querySelector("div#rd").style.transform = `translateY(${n1}px)`
+        document.querySelector("div#rd").style.transform += `translateX(${n2}px)`
+      }
+      vai()
+      setTimeout('master()',5)
+    }
+    var f = document.getElementById('foo');
+      document.addEventListener('click', function(ev){
+        f.style.transform = 'translateY('+(ev.clientY-25)+'px)';
+        f.style.transform += 'translateX('+(ev.clientX-25)+'px)';
+      },false);  
+  </script>
+
+</body>
+</html>
