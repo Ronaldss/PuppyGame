@@ -74,6 +74,7 @@
 }
 </style>
 </head>
+
 <body onload="master()">
   <div id="rd">Ronald</div>
   <div id="foo" class="btn-grad">Lara</div>
@@ -83,8 +84,20 @@
     var n1 = 10
     var n2 = 10
 
+    function detectaColisao() {
+      setInterval(alertFunc, 100);
+    }
+
+    function alertFunc() {
+ 
+      console.log(document.querySelector("div#rd").getBoundingClientRect().left );
+    }
+   
+
     // Movimentação principal
     function master(){
+
+      detectaColisao() ;
 
       // Criando número aleatório, setando um limite + e -
       function aleatorio(min, max) {
@@ -104,15 +117,31 @@
         document.querySelector("div#gr").style.transform = `translateY(${n3}px)`
         document.querySelector("div#gr").style.transform += `translateX(${n4}px)`
         if(n1==n3 || n2==n4){console.log("Colisão!")}
+      
       }
       vai()
       setTimeout('master()',1000)
+      
     }
     var f = document.getElementById('foo');
       document.addEventListener('click', function(ev){
         f.style.transform = 'translateY('+(ev.clientY-25)+'px)';
         f.style.transform += 'translateX('+(ev.clientX-25)+'px)';
       },false);  
+
+// Capturar posição de elementos na tela
+/*function findPosition( oElement ) {
+  if( typeof( oElement.offsetParent ) != 'undefined' ) {
+    for( var posX = 0, posY = 0; oElement; oElement = oElement.offsetParent ) {
+      posX += oElement.offsetLeft;
+      posY += oElement.offsetTop;
+    }
+    return [ posX, posY ];
+  } else {
+    return [ oElement.x, oElement.y ];
+  }
+}
+*/
   </script>
 
 </body>
