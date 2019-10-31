@@ -7,16 +7,37 @@
   <title>Transition Teste 3</title>
 <style>
   body{
-    background-image: url("bg.jpg");
+   /* background-image: url("bg.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100%; */
+    background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);
+  }
+  #gr{
+    border-radius:50px;
+    border: solid 2px rgb(3, 0, 0);
+    width:60px;
+    height:60px;
+    line-height: 60px;
+    text-align: center;
+    background:rgb(255, 157, 0);
+    color: rgb(24, 16, 9);
+    position:absolute;
+    top:30;
+    left:30;
+    -moz-transition: transform 1s; 
+    -webkit-transition: transform 1s;  
+    -ms-transition: transform 1s;  
+    -o-transition: transform 1s;  
+    transition: transform 1s;  
   }
   #foo{
   border-radius:50px;
-  border: solid 2px fuchsia;
-  width:20px;
-  height:20px;
-  background:rgb(38, 255, 0);
+  border: solid 2px rgb(1, 1, 58);
+  width:70px;
+  height:70px;
+  text-align: center;
+  line-height: 70px;
+  color: rgb(0, 0, 0);
   position:absolute;
   top:0;
   left:0;
@@ -25,15 +46,16 @@
   -ms-transition: transform 1s;  
   -o-transition: transform 1s;  
   transition: transform 1s cubic-bezier(0.68,-0.55,0.265,1.55); 
-}
+  }
 #rd{
   border-radius:50px;
-  border: solid 2px orangered;
+  border: solid 2px rgb(3, 0, 0);
   width:50px;
   height:50px;
   line-height: 50px;
   text-align: center;
-  background:rgb(251, 255, 0);
+  background:rgb(76, 1, 95);
+  color: white;
   position:absolute;
   top:30;
   left:30;
@@ -46,28 +68,42 @@
 .bt{
   margin-right: 10px;
 }
+/* Cor User */
+.btn-grad{
+  background-image: linear-gradient( 135deg, #FFF720 10%, #3CD500 100%);
+}
 </style>
 </head>
-<body>
-  <input type="button" value="vai" class="bt" onclick="master()">
-  <div id="rd">Rd</div>
-  <div id="foo"></div>
+<body onload="master()">
+  <div id="rd">Ronald</div>
+  <div id="foo" class="btn-grad">Lara</div>
+  <div id="gr">Mana</div>
 
   <script>
     var n1 = 10
     var n2 = 10
+
+    // Movimentação principal
     function master(){
+
+      // Criando número aleatório, setando um limite + e -
       function aleatorio(min, max) {
         return Math.floor(Math.random() * (max - min) + min)
       }
       n1=aleatorio(0,window.innerHeight-80)
       n2=aleatorio(0,window.innerWidth-80)
-      console.log(`Y: ${n1}`)
-      console.log(`X: ${n2}`)
+      n3=aleatorio(0,window.innerHeight-80)
+      n4=aleatorio(0,window.innerWidth-80)
+      //console.log(`Y: ${n1}`)
+      //console.log(`X: ${n2}`)
       
+      // Movimentando os player
       function vai(){
         document.querySelector("div#rd").style.transform = `translateY(${n1}px)`
         document.querySelector("div#rd").style.transform += `translateX(${n2}px)`
+        document.querySelector("div#gr").style.transform = `translateY(${n3}px)`
+        document.querySelector("div#gr").style.transform += `translateX(${n4}px)`
+        if(n1==n3 || n2==n4){console.log("Colisão!")}
       }
       vai()
       setTimeout('master()',1000)
