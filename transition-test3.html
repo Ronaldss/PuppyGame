@@ -36,11 +36,11 @@
     position:absolute;
     top:30;
     left:30;
-    -moz-transition: transform 5s; 
-    -webkit-transition: transform 5s;  
-    -ms-transition: transform 5s;  
-    -o-transition: transform 5s;  
-    transition: transform 5s;  
+    -moz-transition: transform 1s; 
+    -webkit-transition: transform 1s;  
+    -ms-transition: transform 1s;  
+    -o-transition: transform 1s;  
+    transition: transform 1s;  
   }
   #foo{
   border-radius:50px;
@@ -53,11 +53,11 @@
   position:absolute;
   top:0;
   left:0;
-  -moz-transition: transform 5s; 
-  -webkit-transition: transform 5s;  
-  -ms-transition: transform 5s;  
-  -o-transition: transform 5s;  
-  transition: transform 5s cubic-bezier(0.68,-0.55,0.265,1.55); 
+  -moz-transition: transform 1s; 
+  -webkit-transition: transform 1s;  
+  -ms-transition: transform 1s;  
+  -o-transition: transform 1s;  
+  transition: transform 1s cubic-bezier(0.68,-0.55,0.265,1.55); 
   }
 #rd{
   border-radius:50px;
@@ -69,13 +69,11 @@
   background:rgb(76, 1, 95);
   color: white;
   position:absolute;
-  top:30;
-  left:30;
-  -moz-transition: transform 5s; 
-  -webkit-transition: transform 5s;  
-  -ms-transition: transform 5s;  
-  -o-transition: transform 5s;  
-  transition: transform 5s;  
+  -moz-transition: transform 1s; 
+  -webkit-transition: transform 1s;  
+  -ms-transition: transform 1s;  
+  -o-transition: transform 1s;  
+  transition: transform 1s;  
 }
 .bt{
   margin-right: 10px;
@@ -93,7 +91,6 @@ div.vcd{
 }
 </style>
 </head>
-
 <body onload="master()">
   <div id="rd">Ronald</div>
   <div id="foo" class="btn-grad">Lara</div>
@@ -106,10 +103,15 @@ div.vcd{
         <div id="fooTop"></div>
     </div>
     <div>
-        <div>Dados da Mana</div>
+        <div>Dados da gr</div>
         <div id="manaLeft"></div>
         <div id="manaTop"></div>
     </div>
+    <div>
+      <div>Dados da rd</div>
+      <div id="rdLeft"></div>
+      <div id="rdTop"></div>
+  </div>
   </div>
 
   <div class="vcd" id="vencedor"><p></p></div>
@@ -148,18 +150,10 @@ div.vcd{
 
       document.getElementById('manaLeft').innerHTML= "left: "+grL;
       document.getElementById('manaTop').innerHTML= "Top: "+grT;
- 
-      if(
-        laraLeft + 50  > manaLeft &&
-        laraLeft < manaLeft + 50 &&
-        laraTop + 50  > manaTop &&
-        laraTop < manaTop + 50
-      ){
-        // clearInterval();  
-        // clearTimeout();
-        //alert("colidiu!")
-      }
 
+      document.getElementById('rdLeft').innerHTML= "left: "+rdL;
+      document.getElementById('rdTop').innerHTML= "Top: "+rdT;
+ 
       // primeira verificação
       if(rdL === fooL || rdT === fooT){
         // Apagando elemento filho da rd
@@ -179,8 +173,7 @@ div.vcd{
         vcd.innerHTML += `Ronald venceu!`
       }
     }
-   
-
+  
     // Movimentação principal
     function master(){
 
@@ -207,7 +200,7 @@ div.vcd{
       
       }
       vai()
-      setTimeout('master()',3000)
+      setTimeout('master()',1000)
       
     }
     var f = document.getElementById('foo');
