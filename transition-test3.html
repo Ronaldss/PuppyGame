@@ -12,6 +12,17 @@
     background-size: 100%; */
     background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);
   }
+  .panel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    width: 400px;
+    height: 50px;
+    background-color: rgba(17, 17, 17, 0.425);
+    border-radius: 25px;
+    color: white;
+  }
   #gr{
     border-radius:50px;
     border: solid 2px rgb(3, 0, 0);
@@ -24,11 +35,11 @@
     position:absolute;
     top:30;
     left:30;
-    -moz-transition: transform 1s; 
-    -webkit-transition: transform 1s;  
-    -ms-transition: transform 1s;  
-    -o-transition: transform 1s;  
-    transition: transform 1s;  
+    -moz-transition: transform 5s; 
+    -webkit-transition: transform 5s;  
+    -ms-transition: transform 5s;  
+    -o-transition: transform 5s;  
+    transition: transform 5s;  
   }
   #foo{
   border-radius:50px;
@@ -41,11 +52,11 @@
   position:absolute;
   top:0;
   left:0;
-  -moz-transition: transform 1s; 
-  -webkit-transition: transform 1s;  
-  -ms-transition: transform 1s;  
-  -o-transition: transform 1s;  
-  transition: transform 1s cubic-bezier(0.68,-0.55,0.265,1.55); 
+  -moz-transition: transform 5s; 
+  -webkit-transition: transform 5s;  
+  -ms-transition: transform 5s;  
+  -o-transition: transform 5s;  
+  transition: transform 5s cubic-bezier(0.68,-0.55,0.265,1.55); 
   }
 #rd{
   border-radius:50px;
@@ -59,11 +70,11 @@
   position:absolute;
   top:30;
   left:30;
-  -moz-transition: transform 1s; 
-  -webkit-transition: transform 1s;  
-  -ms-transition: transform 1s;  
-  -o-transition: transform 1s;  
-  transition: transform 1s;  
+  -moz-transition: transform 5s; 
+  -webkit-transition: transform 5s;  
+  -ms-transition: transform 5s;  
+  -o-transition: transform 5s;  
+  transition: transform 5s;  
 }
 .bt{
   margin-right: 10px;
@@ -80,6 +91,21 @@
   <div id="foo" class="btn-grad">Lara</div>
   <div id="gr">Mana</div>
 
+  <div class="panel">
+    <div>
+        <div>Dados do Foo</div>
+        <div id="fooLeft"></div>
+        <div id="fooTop"></div>
+    </div>
+    <div>
+        <div>Dados da Mana</div>
+        <div id="manaLeft"></div>
+        <div id="manaTop"></div>
+    </div>
+    
+
+  </div>
+
   <script>
     var n1 = 10
     var n2 = 10
@@ -89,8 +115,31 @@
     }
 
     function alertFunc() {
+      let lara = document.querySelector("div#foo").getBoundingClientRect() ;
+      let mana = document.querySelector("div#gr").getBoundingClientRect() ;
+
+      let laraLeft =  Math.floor(lara.left);
+      let laraTop  =  Math.floor(lara.top) ;
+      let manaLeft = Math.floor(mana.left) ;
+      let manaTop = Math.floor(mana.top) ;
+
+      document.getElementById('fooLeft').innerHTML= "left: "+laraLeft;
+      document.getElementById('fooTop').innerHTML=  "Top: "+laraTop;
+
+      document.getElementById('manaLeft').innerHTML= "left: "+manaLeft;
+      document.getElementById('manaTop').innerHTML= "Top: "+manaTop;
  
-      console.log(document.querySelector("div#rd").getBoundingClientRect().left );
+      if(
+        laraLeft + 50  > manaLeft &&
+        laraLeft < manaLeft + 50 &&
+        laraTop + 50  > manaTop &&
+        laraTop < manaTop + 50
+
+      ){
+        // clearInterval();  
+        // clearTimeout();
+        //alert("colidiu!")
+      }
     }
    
 
@@ -120,7 +169,7 @@
       
       }
       vai()
-      setTimeout('master()',1000)
+      setTimeout('master()',3000)
       
     }
     var f = document.getElementById('foo');
