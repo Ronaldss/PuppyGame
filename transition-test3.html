@@ -7,10 +7,10 @@
   <title>Transition Teste 3</title>
 <style>
   body{
-   /* background-image: url("bg.jpg");
+   background-image: url("bg.jpg");
     background-repeat: no-repeat;
-    background-size: 100%; */
-    background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);
+    background-size: 100%;
+    /* background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%); */
   }
   .panel{
     display: flex;
@@ -19,16 +19,17 @@
     padding: 20px;
     width: 400px;
     height: 50px;
-    background-color: rgba(17, 17, 17, 0.425);
+    right: 10px;
+    background-color: rgba(17, 17, 17, 0.342);
     border-radius: 25px;
     color: white;
   }
   #gr{
     border-radius:50px;
     border: solid 2px rgb(3, 0, 0);
-    width:60px;
-    height:60px;
-    line-height: 60px;
+    width:50px;
+    height:50px;
+    line-height: 50px;
     text-align: center;
     background:rgb(255, 157, 0);
     color: rgb(24, 16, 9);
@@ -44,10 +45,10 @@
   #foo{
   border-radius:50px;
   border: solid 2px rgb(1, 1, 58);
-  width:70px;
-  height:70px;
+  width:50px;
+  height:50px;
   text-align: center;
-  line-height: 70px;
+  line-height: 50px;
   color: rgb(0, 0, 0);
   position:absolute;
   top:0;
@@ -61,7 +62,7 @@
 #rd{
   border-radius:50px;
   border: solid 2px rgb(3, 0, 0);
-  width:50px;
+  width:50;
   height:50px;
   line-height: 50px;
   text-align: center;
@@ -83,6 +84,13 @@
 .btn-grad{
   background-image: linear-gradient( 135deg, #FFF720 10%, #3CD500 100%);
 }
+div.vcd{
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 70px;
+  text-align: center;
+  line-height: 300px;
+}
 </style>
 </head>
 
@@ -102,43 +110,73 @@
         <div id="manaLeft"></div>
         <div id="manaTop"></div>
     </div>
-    
-
   </div>
 
+  <div class="vcd" id="vencedor"><p></p></div>
+
   <script>
+    // Variaveis
     var n1 = 10
     var n2 = 10
+    var vcd = window.document.getElementById("vencedor") // Vencedor
+    var nUser1 = window.prompt("Nome do primeiro player: ") // Player1
+    var nUser2 = window.prompt("Nome do segundo player: ") // Player2
 
+    // Reading name users in tag div
+    //window.getElementById() //////===================================================================================  AQUI!
+
+    // Identificando colisão
     function detectaColisao() {
       setInterval(alertFunc, 100);
     }
-
+    var rdL = 0
+    var rdT = 0
+    var grL = 0
+    var grT = 0
     function alertFunc() {
-      let lara = document.querySelector("div#foo").getBoundingClientRect() ;
-      let mana = document.querySelector("div#gr").getBoundingClientRect() ;
 
-      let laraLeft =  Math.floor(lara.left);
-      let laraTop  =  Math.floor(lara.top) ;
-      let manaLeft = Math.floor(mana.left) ;
-      let manaTop = Math.floor(mana.top) ;
+      // Variaveis Ronald
+      rdL = Math.floor(document.querySelector("div#rd").getBoundingClientRect().left)
+      rdT = Math.floor(document.querySelector("div#rd").getBoundingClientRect().top) 
+      grL = Math.floor(document.querySelector("div#gr").getBoundingClientRect().left)
+      grT = Math.floor(document.querySelector("div#gr").getBoundingClientRect().top)
+      fooL = Math.floor(document.querySelector("div#foo").getBoundingClientRect().left)
+      fooT = Math.floor(document.querySelector("div#foo").getBoundingClientRect().top)
 
-      document.getElementById('fooLeft').innerHTML= "left: "+laraLeft;
-      document.getElementById('fooTop').innerHTML=  "Top: "+laraTop;
+      document.getElementById('fooLeft').innerHTML= "left: "+fooL;
+      document.getElementById('fooTop').innerHTML=  "Top: "+fooT;
 
-      document.getElementById('manaLeft').innerHTML= "left: "+manaLeft;
-      document.getElementById('manaTop').innerHTML= "Top: "+manaTop;
+      document.getElementById('manaLeft').innerHTML= "left: "+grL;
+      document.getElementById('manaTop').innerHTML= "Top: "+grT;
  
       if(
         laraLeft + 50  > manaLeft &&
         laraLeft < manaLeft + 50 &&
         laraTop + 50  > manaTop &&
         laraTop < manaTop + 50
-
       ){
         // clearInterval();  
         // clearTimeout();
         //alert("colidiu!")
+      }
+
+      // primeira verificação
+      if(rdL === fooL || rdT === fooT){
+        // Apagando elemento filho da rd
+        var node = document.getElementById("rd")
+        if (node.parentNode) {
+        node.parentNode.removeChild(node)
+        }
+        vcd.innerHTML += `Mana venceu!`
+      }
+      // Segunda verificação
+      if(grL === fooL || grT === fooT){
+        // Apagando elemento filho da gr
+        var node = document.getElementById("gr")
+        if (node.parentNode) {
+        node.parentNode.removeChild(node)
+        }
+        vcd.innerHTML += `Ronald venceu!`
       }
     }
    
@@ -165,7 +203,7 @@
         document.querySelector("div#rd").style.transform += `translateX(${n2}px)`
         document.querySelector("div#gr").style.transform = `translateY(${n3}px)`
         document.querySelector("div#gr").style.transform += `translateX(${n4}px)`
-        if(n1==n3 || n2==n4){console.log("Colisão!")}
+        if(n1==n3 & n2==n4){console.log("Colisão!")}
       
       }
       vai()
@@ -191,7 +229,6 @@
   }
 }
 */
-  </script>
-
+</script>
 </body>
 </html>
