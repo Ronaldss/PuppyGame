@@ -34,7 +34,7 @@
     line-height: 50px;
     text-align: center;
     background:rgb(255, 157, 0);
-    color: rgb(24, 16, 9);
+    color: #000;
     position:absolute;
     top:30;
     left:30;
@@ -51,7 +51,7 @@
   height:50px;
   text-align: center;
   line-height: 50px;
-  color: rgb(0, 0, 0);
+  color: #000;
   position:absolute;
   top:0;
   left:0;
@@ -100,17 +100,17 @@ div.vcd{
 
   <div class="panel">
     <div>
-        <div>Dados do Foo</div>
+        <div>JS</div>
         <div id="fooLeft"></div>
         <div id="fooTop"></div>
     </div>
     <div>
-        <div>Dados da gr</div>
+        <div id="prd">Dados da gr</div>
         <div id="manaLeft"></div>
         <div id="manaTop"></div>
     </div>
     <div>
-      <div>Dados da rd</div>
+      <div id="pgr">Dados da rd</div>
       <div id="rdLeft"></div>
       <div id="rdTop"></div>
   </div>
@@ -127,12 +127,13 @@ div.vcd{
     var nUser2 = window.prompt("Nome do segundo player: ") // Player2
     console.log(nUser1)
     console.log(nUser2)
+    
     // Atribuindo nomes aos playes
     window.document.getElementById("rd").innerHTML = `${nUser1}`
     window.document.getElementById("gr").innerHTML = `${nUser2}`
-
-    // Reading name users in tag div
-    //window.getElementById() //////===================================================================================  AQUI!
+    // Atribuindo nome no painel
+    window.document.getElementById("prd").innerHTML = `${nUser1}`
+    window.document.getElementById("pgr").innerHTML = `${nUser2}`
 
     // Identificando colisão
     function detectaColisao() {
@@ -152,6 +153,7 @@ div.vcd{
       fooL = Math.floor(document.querySelector("div#foo").getBoundingClientRect().left)
       fooT = Math.floor(document.querySelector("div#foo").getBoundingClientRect().top)
 
+      // Informações para o painel
       document.getElementById('fooLeft').innerHTML= "left: "+fooL;
       document.getElementById('fooTop').innerHTML=  "Top: "+fooT;
 
