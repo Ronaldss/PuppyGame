@@ -7,7 +7,7 @@
   <title>Transition Teste 3</title>
 <style>
   body{
-   background-image: url("bg.jpg");
+    background-image: url("bg.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     /* background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%); */
@@ -19,7 +19,9 @@
     padding: 20px;
     width: 400px;
     height: 50px;
-    right: 10px;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
     background-color: rgba(17, 17, 17, 0.342);
     border-radius: 25px;
     color: white;
@@ -123,6 +125,11 @@ div.vcd{
     var vcd = window.document.getElementById("vencedor") // Vencedor
     var nUser1 = window.prompt("Nome do primeiro player: ") // Player1
     var nUser2 = window.prompt("Nome do segundo player: ") // Player2
+    console.log(nUser1)
+    console.log(nUser2)
+    // Atribuindo nomes aos playes
+    window.document.getElementById("rd").innerHTML = `${nUser1}`
+    window.document.getElementById("gr").innerHTML = `${nUser2}`
 
     // Reading name users in tag div
     //window.getElementById() //////===================================================================================  AQUI!
@@ -137,7 +144,7 @@ div.vcd{
     var grT = 0
     function alertFunc() {
 
-      // Variaveis Ronald
+      // Variaveis de posicionamento.
       rdL = Math.floor(document.querySelector("div#rd").getBoundingClientRect().left)
       rdT = Math.floor(document.querySelector("div#rd").getBoundingClientRect().top) 
       grL = Math.floor(document.querySelector("div#gr").getBoundingClientRect().left)
