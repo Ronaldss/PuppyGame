@@ -1,3 +1,5 @@
+//Por RonaldsS
+
 // Variaveis
 var n1 = 10
 var n2 = 10
