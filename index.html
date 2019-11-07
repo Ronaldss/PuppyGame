@@ -5,101 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Transition Teste 3</title>
-<style>
-  body{
-    /*
-    background-image: url("bg.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    */
-    background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);
-  }
-  .panel{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 20px;
-    width: 400px;
-    height: 50px;
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    background-color: rgba(17, 17, 17, 0.342);
-    border-radius: 25px;
-    color: white;
-  }
-  #gr{
-    border-radius:50px;
-    border: solid 2px rgb(3, 0, 0);
-    width:50px;
-    height:50px;
-    line-height: 50px;
-    text-align: center;
-    background:rgb(255, 157, 0);
-    color: #000;
-    position:absolute;
-    top:30;
-    left:30;
-    -moz-transition: transform 1s; 
-    -webkit-transition: transform 1s;  
-    -ms-transition: transform 1s;  
-    -o-transition: transform 1s;  
-    transition: transform 1s;  
-  }
-  #foo{
-  border-radius:50px;
-  border: solid 2px rgb(1, 1, 58);
-  width:50px;
-  height:50px;
-  text-align: center;
-  line-height: 50px;
-  color: #000;
-  position:absolute;
-  top:0;
-  left:0;
-  -moz-transition: transform 1s; 
-  -webkit-transition: transform 1s;  
-  -ms-transition: transform 1s;  
-  -o-transition: transform 1s;  
-  transition: transform 1s cubic-bezier(0.68,-0.55,0.265,1.55); 
-  }
-#rd{
-  border-radius:50px;
-  border: solid 2px rgb(3, 0, 0);
-  width:50;
-  height:50px;
-  line-height: 50px;
-  text-align: center;
-  background:rgb(76, 1, 95);
-  color: white;
-  position:absolute;
-  -moz-transition: transform 1s; 
-  -webkit-transition: transform 1s;  
-  -ms-transition: transform 1s;  
-  -o-transition: transform 1s;  
-  transition: transform 1s;  
-}
-.bt{
-  margin-right: 10px;
-}
-/* Cor User */
-.btn-grad{
-  background-image: linear-gradient( 135deg, #FFF720 10%, #3CD500 100%);
-}
-div.vcd{
-  color: white;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 70px;
-  text-align: center;
-  line-height: 300px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body onload="master()">
-  <div id="rd">Ronald</div>
+  <div id="rd"></div>
   <div id="foo" class="btn-grad">JS</div>
-  <div id="gr">Mana</div>
-
+  <div id="gr"></div>
   <div class="panel">
     <div>
         <div>JS</div>
@@ -117,9 +28,7 @@ div.vcd{
       <div id="rdTop"></div>
   </div>
   </div>
-
   <div class="vcd" id="vencedor"><p></p></div>
-
   <script src="script.js"></script>
 </body>
 </html>
