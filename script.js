@@ -66,6 +66,7 @@ function alertFunc() {
     node.parentNode.removeChild(node)
     }
     vcd.innerHTML += `${nUser1} venceu!`
+    vcd.innerHTML += `Feliz Natal!`
   }
 }
 
